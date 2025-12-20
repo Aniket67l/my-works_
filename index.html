@@ -616,7 +616,7 @@ video{
   <!-- ACTIONS -->
   <div class="video-actions">
     <button class="like-btn" onclick="likeVideo('video-school-edit')">
-      ❤️ <span id="like-video-school-edit">10</span>
+      ❤️ <span id="like-video-school-edit">0</span>
     </button>
 
     <button class="share-btn" onclick="shareVideo('video-school-edit')">
@@ -697,6 +697,11 @@ video{
 </section>
 
 <script>
+  const INITIAL_LIKES = {
+  "video-school-edit": 12,
+  "video-memories": 8
+};
+
 gsap.registerPlugin(ScrollTrigger);
 
 /* Hero intro */
@@ -874,23 +879,79 @@ function likeVideo(id) {
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".video-card").forEach(card => {
     const id = card.id;
-    const saved = localStorage.getItem(`likes-${id}`);
-    if (saved) {
-      document.getElementById(`like-${id}`).innerText = saved;
+    const key = `likes-${id}`;
+    let likes = localStorage.getItem(key);
+
+    if (!likes) {
+      // first time visitor → seed likes
+      likes = INITIAL_LIKES[id] || 0;
+      localStorage.setItem(key, likes);
     }
+
+    const span = document.getElementById(`like-${id}`);
+    if (span) span.innerText = likes;
   });
 });
+
 
 function shareVideo(id) {
   const url = `${location.origin}${location.pathname}#${id}`;
   navigator.clipboard.writeText(url);
   alert("Video link copied!");
 }
+/* ======================
+   LIKE SYSTEM (LOCAL)
+====================== */
+function likeVideo(id) {
+  const key = `likes-${id}`;
+  let likes = localStorage.getItem(key);
+
+  if (!likes) {
+    likes = 0;
+  }
+
+  likes = parseInt(likes) + 1;
+  localStorage.setItem(key, likes);
+
+  const span = document.getElementById(`like-${id}`);
+  if (span) span.innerText = likes;
+}
+
+/* LOAD LIKES ON PAGE LOAD */
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".video-card").forEach(card => {
+    const id = card.id;
+    const savedLikes = localStorage.getItem(`likes-${id}`);
+    if (savedLikes) {
+      const span = document.getElementById(`like-${id}`);
+      if (span) span.innerText = savedLikes;
+    }
+  });
+});
+
+/* ======================
+   SHARE SYSTEM (SMART)
+====================== */
+function shareVideo(id) {
+  const url = `${location.origin}${location.pathname}#${id}`;
+
+  if (navigator.share) {
+    navigator.share({
+      title: "Creative work by Aniket",
+      text: "Check this out 👇",
+      url: url
+    }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(url);
+    alert("Link copied!");
+  }
+}
 
 </script>
 
 </body>
 </html>
+
 
 
 
