@@ -861,7 +861,7 @@ gsap.utils.toArray(".section").forEach(sec => {
 
 
 /* Cursor parallax */
-if (window.innerWidth > 768) {
+if (window.innerWidth > 368) {
   document.addEventListener("mousemove", e => {
     gsap.to(".hero-bg", {
       x:(e.clientX/window.innerWidth-.5)*50,
@@ -1104,6 +1104,7 @@ function sharePDF(){
 
 </body>
 </html>
+
 
 
 
