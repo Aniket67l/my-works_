@@ -589,6 +589,31 @@ video{
   letter-spacing:1px;
   opacity:.9;
 }
+.file-actions{
+  display:flex;
+  gap:12px;
+  margin-top:12px;
+}
+
+.file-actions button,
+.file-actions a{
+  padding:8px 14px;
+  border-radius:10px;
+  font-size:14px;
+  background:rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  color:#fff;
+  border:none;
+  cursor:pointer;
+  text-decoration:none;
+  transition:0.3s ease;
+}
+
+.file-actions button:hover,
+.file-actions a:hover{
+  background:rgba(155,188,255,0.35);
+  transform:translateY(-2px);
+}
 
 </style>
 </head>
@@ -701,8 +726,8 @@ video{
   <div class="grid">
     <div class="card link-card">
       <h3>Project Website</h3>
-      <a href="#" target="_blank">Live Demo</a>
-      <a href="#" target="_blank">Source Code</a>
+      <a href="#" target="_blank">Live Demo(coming soon)</a>
+      <a href="#" target="_blank">Source Code(coming soon)</a>
     </div>
 <section id="files" class="section">
   <h2 class="section-title">Files</h2>
@@ -717,18 +742,26 @@ video{
 
     <h3 class="pdf-title">My Creative PDF</h3>
 
-    <div class="pdf-actions">
-      <button class="share-btn" onclick="sharePDF()">
-        🔗 Share
-      </button>
-    </div>
+<div class="file-actions">
+  <button class="share-btn" onclick="sharePDF()">
+    🔗 Share
+  </button>
+
+  <a 
+    href="https://drive.google.com/file/d/1Oe-dvLOrsBNsSSVy6v8uimDn2xbMp-yi/view" 
+    target="_blank" 
+    class="open-btn">
+    📂 Open
+  </a>
+</div>
+
   </div>
 </section>
 
 
     <div class="card link-card">
       <h3>Utility Tool</h3>
-      <a href="#" target="_blank">Final Link</a>
+      <a href="#" target="_blank">Final Link(coming soon)</a>
     </div>
   </div>
   <div class="scroll-hint-bottom section-arrow" id="toAbout">
@@ -1030,6 +1063,7 @@ function sharePDF(){
 
 </body>
 </html>
+
 
 
 
