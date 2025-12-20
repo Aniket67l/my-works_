@@ -512,6 +512,40 @@ video{
   left:auto;
   right:20px;
 }
+.video-actions{
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.like-btn,
+.share-btn{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all .25s ease;
+}
+
+.like-btn:hover{
+  background: rgba(255,80,120,0.25);
+  box-shadow: 0 0 18px rgba(255,80,120,0.6);
+  transform: scale(1.08);
+}
+
+.share-btn:hover{
+  background: rgba(120,160,255,0.25);
+  box-shadow: 0 0 18px rgba(120,160,255,0.6);
+  transform: scale(1.08);
+}
 
 </style>
 </head>
@@ -582,7 +616,7 @@ video{
   <!-- ACTIONS -->
   <div class="video-actions">
     <button class="like-btn" onclick="likeVideo('video-school-edit')">
-      ❤️ <span id="like-video-school-edit">0</span>
+      ❤️ <span id="like-video-school-edit">10</span>
     </button>
 
     <button class="share-btn" onclick="shareVideo('video-school-edit')">
@@ -857,6 +891,7 @@ function shareVideo(id) {
 
 </body>
 </html>
+
 
 
 
