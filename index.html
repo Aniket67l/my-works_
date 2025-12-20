@@ -450,6 +450,68 @@ video{
     width: 100%;
   }
 }
+/* HERO SOCIAL ICONS */
+.hero-social{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  z-index: 20;
+}
+
+.hero-social span{
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.hero-social a{
+  color: #9bbcff;
+  font-size: 1.3rem;
+  transition: transform .3s ease, color .3s ease;
+}
+
+.hero-social a:hover{
+  transform: translateY(-3px) scale(1.15);
+  color: #ffffff;
+}
+
+/* Mobile tweak */
+@media (max-width:768px){
+  .hero-social{
+    top: 12px;
+    left: 12px;
+    padding: 8px 12px;
+  }
+  .hero-social span{
+    display: none;
+  }
+}
+.hero-social{
+  position:absolute;
+  top:20px;
+  left:20px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:10px 14px;
+  border-radius:16px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(14px);
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+  z-index:30;
+}
+
+.hero-social.right{
+  left:auto;
+  right:20px;
+}
 
 </style>
 </head>
@@ -459,6 +521,28 @@ video{
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
+  <!-- HERO SOCIAL LINKS -->
+<div class="hero-social">
+  <span>Follow me on</span>
+
+  <a href="https://www.instagram.com/aniket_126/" target="_blank">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+
+  <a href="https://youtube.com/@aniket-vq3ni?si=KTJPk8gvTLzpfveg" target="_blank">
+    <i class="fa-brands fa-youtube"></i>
+  </a>
+</div>
+<!-- HERO SOCIAL LINKS RIGHT -->
+<div class="hero-social right">
+  <a href="https://www.instagram.com/aniket_126/" target="_blank">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+  <a href="https://youtube.com/@aniket-vq3ni?si=KTJPk8gvTLzpfveg" target="_blank">
+    <i class="fa-brands fa-youtube"></i>
+  </a>
+</div>
+
   <div class="floating-elements">
   <span class="float one"></span>
   <span class="float two"></span>
@@ -723,6 +807,7 @@ window.addEventListener("load", () => {
 
 </body>
 </html>
+
 
 
 
