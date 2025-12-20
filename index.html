@@ -390,7 +390,7 @@ video{
 
 .video-wrapper {
   position: relative;
-  width: 100%;
+  width: 150%;
   height: 340px;          /* 👈 card height increase */
   border-radius: 14px;
   overflow: hidden;
@@ -432,6 +432,17 @@ video{
     width:100%;
   }
 }
+/* --- ONLY CARD WIDTH INCREASE (NO VIDEO CHANGE) --- */
+
+.wide-card{
+  width: 620px;      /* 👈 blue block wide */
+  max-width: 95%;
+}
+@media (max-width: 768px){
+  .wide-card{
+    width: 100%;
+  }
+}
 
 </style>
 </head>
@@ -465,7 +476,7 @@ video{
 <section class="section">
   <h2>Edited Videos</h2>
   <div class="grid">
-   <div class="card video-card wide-video">
+   <div class="card video-card wide-card">
   <div class="video-wrapper">
     <iframe
      src="https://drive.google.com/file/d/14uRSxdBQsuItFiM_j2VuWg7TOAVU1sQz/preview"
@@ -705,6 +716,7 @@ window.addEventListener("load", () => {
 
 </body>
 </html>
+
 
 
 
