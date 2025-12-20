@@ -360,6 +360,28 @@ video{
 .social-links a:hover .fa-youtube {
   color: #ff0000;
 }
+/* --- FIX DRIVE IFRAME OVERFLOW --- */
+
+.video-card {
+  overflow: hidden;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* cinematic frame */
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 
 </style>
 </head>
@@ -633,5 +655,6 @@ window.addEventListener("load", () => {
 
 </body>
 </html>
+
 
 
