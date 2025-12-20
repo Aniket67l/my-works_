@@ -382,6 +382,28 @@ video{
   height: 100%;
   border: none;
 }
+/* --- 4:1 ULTRA-WIDE VIDEO SUPPORT --- */
+
+.video-card {
+  overflow: hidden;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 1;   /* 🔥 IMPORTANT */
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 
 </style>
 </head>
@@ -655,6 +677,7 @@ window.addEventListener("load", () => {
 
 </body>
 </html>
+
 
 
 
