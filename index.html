@@ -434,7 +434,7 @@ video{
   width:240px;   /* 👈 wide look */
   max-width:95%;
 }
-@media(max-width:568px){
+@media(max-width:668px){
   .wide-video{
     width:100%;
   }
@@ -445,7 +445,7 @@ video{
   width: 220px;      /* 👈 blue block wide */
   max-width: 95%;
 }
-@media (max-width: 568px){
+@media (max-width: 668px){
   .wide-card{
     width: 100%;
   }
@@ -725,7 +725,7 @@ video{
   <!-- ACTIONS -->
   <div class="video-actions">
     <button class="like-btn" onclick="likeVideo('video-school-edit')">
-      ❤️ <span id="like-video-school-edit">15</span>
+      ❤️ <span id="like-video-school-edit">0</span>
     </button>
 
     <button class="share-btn" onclick="shareVideo('video-school-edit')">
@@ -749,7 +749,7 @@ video{
   <!-- ACTIONS -->
   <div class="video-actions">
     <button class="like-btn" onclick="likeVideo('video-memories')">
-      ❤️ <span id="like-video-memories">12</span>
+      ❤️ <span id="like-video-memories">0</span>
     </button>
 
     <button class="share-btn" onclick="shareVideo('video-memories')">
@@ -837,8 +837,8 @@ video{
 
 <script>
   const INITIAL_LIKES = {
-  "video-school-edit": 12,
-  "video-memories": 8
+  "video-school-edit": 15,
+  "video-memories": 12
 };
 
 gsap.registerPlugin(ScrollTrigger);
@@ -1104,6 +1104,7 @@ function sharePDF(){
 
 </body>
 </html>
+
 
 
 
