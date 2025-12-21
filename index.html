@@ -714,16 +714,18 @@ video{
     </iframe>
   </div>
 
-  <h3 class="video-title">New Drive Edit</h3>
+  <h3 class="video-title">Class 10 B Edit</h3>
 
   <div class="video-actions">
     <button class="like-btn" onclick="likeVideo('video-new-drive')">
       ❤️ <span id="like-video-new-drive">4</span>
     </button>
 
-    <button class="share-btn" onclick="shareVideo('video-new-drive')">
-      🔗 Share
-    </button>
+  <button class="share-btn"
+onclick="shareVideo('video-school-edit','School Edit')">
+🔗 Share
+</button>
+
   </div>
 
 </div>
@@ -1129,10 +1131,27 @@ function shareVideo(id) {
   alert("Link copied! Anyone opening it will land on this video 🔥");
 }
 
+function shareVideo(videoId, title) {
+  const url = window.location.origin + window.location.pathname + "#" + videoId;
+
+  if (navigator.share) {
+    navigator.share({
+      title: title,
+      text: "Check this out 👀",
+      url: url
+    });
+  } else {
+    // fallback (old browsers)
+    navigator.clipboard.writeText(url);
+    alert("Link copied!");
+  }
+}
+
 </script>
 
 </body>
 </html>
+
 
 
 
