@@ -373,20 +373,6 @@ video{
   overflow: hidden;
 }
 
-.video-wrapper {
-  position: relative;
-  width: 100%;
-  height: 520px;          /* PC height */
-  border-radius: 14px;
-  overflow: hidden;
-  background: #000;
-}
-
-.video-wrapper iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
 
 /* blue card width only */
 .wide-card {
@@ -585,8 +571,7 @@ video{
     padding: 1rem;
     box-sizing: border-box;
   }
-
-  .video-wrapper {
+ .video-wrapper {
     position: relative;
     width: 100%;
     padding-top: 56.25%; /* YouTube / Drive ratio */
@@ -608,6 +593,38 @@ video{
     flex-wrap: wrap;
     gap: 0.6rem;
     justify-content: center;
+  }
+}
+/* ===== FINAL RESPONSIVE VIDEO (NO CROP) ===== */
+
+.video-card {
+  width: 100%;
+  max-width: 720px;
+  margin: auto;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 ratio – safe for all */
+  background: #000;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.video-wrapper iframe,
+.video-wrapper video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* mobile safety */
+@media (max-width: 768px) {
+  .video-card {
+    max-width: 100%;
   }
 }
 
@@ -1113,6 +1130,7 @@ function shareVideo(videoId, title) {
 
 </body>
 </html>
+
 
 
 
